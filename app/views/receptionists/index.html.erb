@@ -1,0 +1,27 @@
+<h1>Receptionists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @receptionists.each do |receptionist| %>
+      <tr>
+        <td><%= receptionist.name %></td>
+        <td><%= receptionist.email %></td>
+        <td><%= link_to 'Show', receptionist %></td>
+        <td><%= link_to 'Edit', edit_receptionist_path(receptionist) %></td>
+        <td><%= link_to 'Destroy', receptionist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Receptionist', new_receptionist_path %>
